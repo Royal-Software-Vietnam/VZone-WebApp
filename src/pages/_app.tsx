@@ -1,6 +1,36 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
+import React, { useState } from "react"
+import { Nunito } from 'next/font/google'
+import Sign from './sign'
+
+const roboto = Nunito({
+  weight: '500',
+  subsets: ['latin'],
+})
+
+const AppContext = React.createContext<{
+  user?:any, setUser?:any, 
+  loading?:any, setLoading?:any
+}>({})
+
+export const AppProvider = ({children}:{children:React.ReactNode}) => {
+  const [user, setUser] = useState<any>()
+  const [loading, setLoading] = useState<any>(false)
+  console.log(`Version: 1.0.0`)
+
+  return <AppContext.Provider value={{user, setUser, loading, setLoading}}>
+    {children}
+  </AppContext.Provider>
+}
+
+export const useApp = () => React.useContext(AppContext)
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+
+  return <main className={roboto.className}>
+    <AppProvider>
+      <Component {...pageProps} />
+    </AppProvider>
+  </main>
 }

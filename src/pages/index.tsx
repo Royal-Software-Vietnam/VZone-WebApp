@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Sidebar from '@/components/home/Sidebar'
 import Poster from '@/components/form/Poster'
-import { Carousel } from 'antd';
+import { Carousel, Layout } from 'antd';
 import { MdAdd } from "react-icons/md"
 import { useApp } from './_app'
 import { useEffect } from "react"
@@ -30,9 +30,7 @@ function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="home px-[17.08%] bg-black flex space-x-[8px]">
-        <Sidebar />
-        <div className="w-[600px] overflow-y-auto scrollbar-none h-screen text-white">
+      <div className="w-[600px] overflow-y-auto scrollbar-none h-screen text-white">
           <div className="w-full heading border-solid border-[#2F3336] border-x-[0.6px] border-b-[0.6px] flex justify-between items-center p-[15px] h-[53px]">
             <h3 className="text-lg font-semibold">Home</h3>
             <Image
@@ -78,9 +76,7 @@ function Home() {
             <Poster.Content media={true} />
 
           </div>
-        </div>
-        <Rightbar />
-      </main>
+      </div>
     </>
   )
 }

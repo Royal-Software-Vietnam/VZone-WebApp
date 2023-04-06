@@ -2,7 +2,7 @@ import { RiSettings4Line, RiVideoAddLine } from "react-icons/ri"
 import { HiOutlineDotsHorizontal } from "react-icons/hi"
 
 export default function Trends({ children }:{ children:React.ReactNode }) {
-    return <div className="h-450px] w-full mt-[12px] bg-[#202327] rounded-[15px] px-[16px] py-[12px]">
+    return <div className="h-[450px] w-full mt-[12px] bg-[#202327] rounded-[15px] px-[16px] py-[12px]">
         <div className="heading flex items-center justify-between mb-[12px]">
             <h1 className="leading-[23px] text-[19px] font-bold text-white">Trends for you</h1>
             <RiSettings4Line className="text-[22px] text-white" />

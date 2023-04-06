@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 import React, { useState } from "react"
 import { Nunito } from 'next/font/google'
 import Sign from './sign'
+import Page from '@/components/page'
 
 const roboto = Nunito({
   weight: '500',
@@ -30,7 +31,9 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return <main className={roboto.className}>
     <AppProvider>
-      <Component {...pageProps} />
+      <Page>
+        <Component {...pageProps} />
+      </Page>
     </AppProvider>
   </main>
 }

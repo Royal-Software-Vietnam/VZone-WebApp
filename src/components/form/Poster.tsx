@@ -3,21 +3,25 @@ import Image from 'next/image'
 import { MdMoreHoriz } from "react-icons/md"
 import { FcLike, FcLikePlaceholder } from "react-icons/fc"
 import { MdOutlineVerified } from "react-icons/md"
-import styled from "styled-components"
+import { useState } from "react"
+import ContentCreator from "./ContentCreator"
 
 
 export default function Poster() {
+
+    const [showContentCreator, setShowContentCreator] = useState<boolean>(false)
+
     return <div className="w-full border-solid border-[#2F3336] border-y-[0.6px] mt-4">
+        <ContentCreator open={showContentCreator} onCancel={() => setShowContentCreator(false)} setShowContentCreator={setShowContentCreator}/>
         <div className="flex items-start space-x-[12px] p-[12px]">
             <div className="user">
                 <div className="w-[48px] h-[48px] rounded-full bg-gray-400"></div>
             </div>
-            <div className="w-full">
-                <Input.TextArea placeholder="What's happening?" className="text-white bg-black outline-none border-none placeholder:text-gray-400" />
+            <div onClick={() => setShowContentCreator(true)} className="w-full cursor-pointer">
+                <input type="button" value={"Bạn đang nghĩ gì vây?"} placeholder="What's happening?" className="text-gray-400 bg-black outline-none border-none cursor-pointer pl-4 py-2" />
                 <div className="flex items-center justify-between mt-[20px]">
                     <div className="flex space-x-[12px]">
                         <Image
-
                             src="/img.svg" alt="img.svg"
                             width={20} height={20} priority
                         />

@@ -1,20 +1,17 @@
 import Image from 'next/image'
 import { RiHomeLine, RiScan2Line, RiNotificationLine, RiMessage3Line, RiBookmarkLine, RiUserLine, RiSettings4Line } from "react-icons/ri"
-
+import { SiFampay } from "react-icons/si"
+import Link from 'next/link'
 interface iProps {
     menu?: Array<any>
 }
 
 export default function Sidebar() {
-    return <div className="sidebar w-[275px] h-screen flex flex-col p-[13px] justify-between">
+    return <div className="sidebar w-[275px] h-screen flex flex-col p-[13px] justify-between overflow-y-auto">
           <div className="top text-white">
-            <div className="item flex items-center justify-start space-x-1 py-[13px]">
-              <Image
-                src="/logo.png" alt="Vercel Logo"
-                className=""
-                width={66} height={66} priority
-              /><p className="font-bold text-2xl">VZone</p>
-            </div>
+              <Link href="/" className="item flex items-center justify-start space-x-1 py-[13px]">
+                <SiFampay className="text-sky-500 text-4xl" /><p className="font-bold text-2xl">Zone</p>
+              </Link>
             <div className="item flex justify-start space-x-3 py-[13px]">
               <RiHomeLine className="text-2xl"/>
               <p>Home</p>

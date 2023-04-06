@@ -7,3 +7,31 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.ant-picker-input input {
+  color: white !important;
+}
+
+.ant-picker-input input::placeholder {
+  color: rgb(156, 163, 175) !important;
+}
+
+.ant-upload-list-item-container {
+  width: 200px !important;
+  height: 200px !important;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.custom-upload-button {
+  display: inline-block;
+  color: #fff;
+  cursor: pointer;
+}
+
+.custom-upload-button::file-selector-button {
+  color: #fff;
+  cursor: pointer;
+}

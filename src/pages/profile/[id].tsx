@@ -12,11 +12,12 @@ export default function Profile(props: any) {
       <div className="flex space-x-8 justify-center items-center">
         <Link href="/"><Image src="/back.svg" alt="back image" width={22} height={22} /></Link>
         <div>
-        <h3 className="text-lg leading-4 font-semibold">{props.name}</h3>
-        <small>{props.username}</small>
+          <h3 className="text-lg leading-4 font-semibold">{props.name}</h3>
+          <small className="text-gray-300">{props.username}</small>
         </div>
       </div>
     </div>
+    <div className="w-full h-[200px] bg-red-500"></div>
   </div>
 }
 

@@ -1,4 +1,4 @@
-import { useApp } from "../_app"
+import { useApp } from "../../_app"
 import { useState } from "react"
 import { useRouter } from "next/router"
 import { setCookie, getCookie, deleteCookie } from 'cookies-next'
@@ -43,7 +43,7 @@ export default function Sign() {
         console.log(`data`)
     }
 
-    return <div className={`${styles.vzone_page} overflow-y-hidden scrollbar-none`}>
+    return <div className={`h-screen overflow-y-hidden scrollbar-none`}>
         {loading && <div className="w-screen h-screen flex items-center justify-center fixed z-50 top-0 left-0 bg-black bg-opacity-25">
             <h1 className="text-2xl text-black">LOADING ...</h1>
         </div>}

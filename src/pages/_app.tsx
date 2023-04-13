@@ -1,8 +1,11 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
+import axios from 'axios'
 import React, { useState } from "react"
 import { Nunito } from 'next/font/google'
-import Sign from './sign'
+import { setCookie, getCookie, deleteCookie } from 'cookies-next'
+import { GetServerSidePropsContext, GetStaticPropsContext, GetStaticPathsContext } from 'next'
+
 import Page from '@/components/page'
 
 const roboto = Nunito({
@@ -29,6 +32,9 @@ export const useApp = () => React.useContext(AppContext)
 
 export default function App({ Component, pageProps }: AppProps) {
 
+  const token = getCookie("token")
+  console.log(token)
+
   return <main className={roboto.className}>
     <AppProvider>
       <Page>
@@ -36,4 +42,8 @@ export default function App({ Component, pageProps }: AppProps) {
       </Page>
     </AppProvider>
   </main>
+}
+
+interface ServerSidePropsContext extends GetServerSidePropsContext {
+  // custom properties
 }
